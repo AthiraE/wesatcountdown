@@ -17,7 +17,65 @@
 	<link rel="icon" type="image/png" href="images/logos/favicon.png">
    
 
+    <style>
    
+body,
+html{
+	height: 100%;
+	width:100%;
+}
+
+
+.canvas{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #222;
+	/* display: flex; */
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+
+@keyframes ranimate{
+	0%,100%{
+		transform: translateY(-1px);
+	}
+
+	50%{
+		transform: translateY(1px);
+	}
+}
+
+
+
+
+
+.canvas i {
+	 position: absolute; 
+	top: -150px;
+	background: rgba(255,255,255,.5);
+	animation: sanimate linear infinite;
+}
+
+
+@keyframes sanimate{
+	0%{
+		transform: translateY(0);
+	}
+
+	100%{
+		transform: translateY(100vh);
+	}
+}
+
+
+
+
+
+    </style>
    <!-- CSS
          ================================================== -->
    <!-- Bootstrap -->
@@ -49,7 +107,8 @@
    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="background: #222;">
+  
    <div class="body-inner">
       <!-- Header start -->
       <header id="header" class="header header-classic">
@@ -57,16 +116,25 @@
       </header>
       <!--/ Header end -->
       <!-- banner start-->
-      <section class="hero-area centerd-item">
-         <div class="banner-item" style="background-image:url(images/hero_area/bg.gif) ;background-size: cover;height:100%">
+      <section class="hero-area centerd-item"> <div class="canvas"></div>
+         <div class="banner-item" >
             <div class="container">
-               <div class="row">
+               <div class="canvas"></div>
+               <div class="row"> <div class="canvas"></div>
                   <div class="col-lg-8 mx-auto">
                      <div class="banner-content-wrap text-center">
-
+                          
+                              
+                              
+                          
+                             
+                           
+                        
+                          
+                        
                        
-                        <h1 class="banner-title">WESAT</h1>
-                        <h2 class="banner-info"><b>First Ever Women Engineered SATellite</b></h2><br><br><br>
+                        <h1 class="banner-title"> <img src="images/logos/Bgremoved.png" style="height:200px;width:200px">WESAT</h1>
+                        <h2 class="banner-info" style="font-size: 25px;"><b>First Ever Women Engineered SATellite</b></h2><br><br><br>
 
                         <div class="countdown">
                            <div class="counter-item">
@@ -92,6 +160,7 @@
                            </div>
                         </div>
                         <!-- Countdown end -->
+                    
                     </div >
                 </div >
             </div >
@@ -99,6 +168,36 @@
     </div >
              
     </section>
+    <script>
+      function stars() {
+         let count = 50;
+         let canvas = document.querySelector('.canvas');
+
+         let i = 0;
+
+
+         while(i < count){
+            let star = document.createElement('i');
+            let x = Math.floor(Math.random() * window.innerWidth);
+            let duration = Math.random() * 1;
+            let h = Math.random() * 100;
+
+            star.style.left = x + 'px';
+            star.style.width = 1 + 'px'
+            star.style.height = h + 'px';
+
+            star.style.animationDuration = duration + 's';
+
+            canvas.appendChild(star);
+
+            i++;
+         }
+      }
+
+      stars();
+
+      
+   </script>
     <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.js"></script>
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
       <script src="js/popper.min.js"></script>
